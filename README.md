@@ -15,9 +15,10 @@ A simple repo to remind me how to convert markdown files to PDFs and also genera
 for f in *.md; 
     do pandoc "$f" -o "${f%.md}.pdf" 
 done
-
+```
 
 3. Extract all links with [extract-links.lua](extract-links.lua)
+
 ```bash
 for f in $(find markdown_files -type f -name "*.md"); 
     do pandoc "$f" -o "${f%.md}.refs.pdf"  --lua-filter=extract-links.lua
